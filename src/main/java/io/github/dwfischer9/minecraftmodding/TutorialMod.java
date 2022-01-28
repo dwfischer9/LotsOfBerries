@@ -1,6 +1,7 @@
 package io.github.dwfischer9.minecraftmodding;
 
-import assets.tutorialmod.core.init.BlockInit;
+import io.github.dwfischer9.minecraftmodding.core.init.BlockInit;
+import io.github.dwfischer9.minecraftmodding.core.init.EntityInit;
 import io.github.dwfischer9.minecraftmodding.core.init.ItemsInit;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -15,5 +16,7 @@ public class TutorialMod {
 		
 		BlockInit.BLOCKS.register(bus);
 		ItemsInit.ITEMS.register(bus);
+		EntityInit.ENTITIES.register(bus);
 	}
+	
 }

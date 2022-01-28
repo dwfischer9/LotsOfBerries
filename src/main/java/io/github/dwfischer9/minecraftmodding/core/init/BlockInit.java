@@ -1,7 +1,8 @@
-package assets.tutorialmod.core.init;
+package io.github.dwfischer9.minecraftmodding.core.init;
 
 import io.github.dwfischer9.minecraftmodding.TutorialMod;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -17,8 +18,11 @@ public final class BlockInit {
 
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS,
 			TutorialMod.MODID);
-
 	public static final RegistryObject<Block> EXAMPLE_BLOCK = BLOCKS.register("example_block",
 			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_PURPLE)
 					.strength(1.5F, 6.0F).requiresCorrectToolForDrops().sound(SoundType.WOOD)));
+	
+	public static final RegistryObject<Block> STEEL_BEAM = BLOCKS.register("steel_beam",
+			() -> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_GRAY) 
+					.strength(40F, 6.0F).requiresCorrectToolForDrops().sound(SoundType.STONE))); //.strength is (time to break, explosion 
 }

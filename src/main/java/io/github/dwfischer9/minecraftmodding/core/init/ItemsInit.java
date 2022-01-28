@@ -1,6 +1,5 @@
 package io.github.dwfischer9.minecraftmodding.core.init;
 
-import assets.tutorialmod.core.init.BlockInit;
 import io.github.dwfischer9.minecraftmodding.TutorialMod;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorItem;
@@ -12,6 +11,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.SwordItem;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -23,8 +23,14 @@ public final class ItemsInit {
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TutorialMod.MODID);
 //----------------------------------Items------------------------------------\\
 	public static final RegistryObject<Item> EXAMPLE_ITEM = ITEMS.register("example_item", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
-//----------------------------------Blocks----------------------------------\\
+
+	public static final RegistryObject<ForgeSpawnEggItem> BLEEPO_SPAWN_EGG = ITEMS.register("bleepo_spawn_egg", () -> new ForgeSpawnEggItem(EntityInit.BLEEPO,0X17D1C7,0X4D1E65, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	
+	//----------------------------------Blocks----------------------------------\\
 	public static final RegistryObject<BlockItem> EXAMPLE_BLOCK_ITEM = ITEMS.register("example_block",() -> new BlockItem(BlockInit.EXAMPLE_BLOCK.get(), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
+	
+	
+	public static final RegistryObject<BlockItem> STEEL_BEAM_ITEM = ITEMS.register("steel_beam",() -> new BlockItem(BlockInit.STEEL_BEAM.get(), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS).stacksTo(64)));
 
 //----------------------------------Tools------------------------------------\\
 	

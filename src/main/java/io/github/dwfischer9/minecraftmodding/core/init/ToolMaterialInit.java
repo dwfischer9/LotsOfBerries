@@ -1,3 +1,4 @@
+package io.github.dwfischer9.minecraftmodding.core.init;
 //package assets.tutorialmod.core.init;
 //
 //import assets.tutorialmod.core.BaseToolMaterial;
