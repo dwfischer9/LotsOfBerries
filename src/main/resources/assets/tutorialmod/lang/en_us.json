@@ -1,4 +1,7 @@
 {
-	"item.tutorialmod.example_item":"Example Item",
-	"block.tutorialmod.example_block":"Example Block"
+	"item.minecraft.example_item":"Example Item",
+	"block.tutorialmod.example_block":"Example Block",
+	"block.tutorialmod.steel_beam":"Steel Beam",
+	"entity.tutorialmod.bleepo":"Bleepo",
+	"item.tutorialmod.bleepo_spawn_egg":"Bleepo Spawn Egg"
 }

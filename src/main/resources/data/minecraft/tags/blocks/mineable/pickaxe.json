@@ -2,7 +2,8 @@
 
 "replace": false,
 "values": [
-	"tutorialmod:example_block"
+	"tutorialmod:example_block",
+	"tutorialmod:steel_beam"
 	]
 
 }

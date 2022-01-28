@@ -1,4 +1,4 @@
-package assets.tutorialmod.core;
+package io.github.dwfischer9.minecraftmodding.core.init;
 
 import java.util.function.Supplier;
 
