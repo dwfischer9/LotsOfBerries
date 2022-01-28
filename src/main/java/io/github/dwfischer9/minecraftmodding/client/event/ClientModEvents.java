@@ -3,9 +3,13 @@ package io.github.dwfischer9.minecraftmodding.client.event;
 import io.github.dwfischer9.minecraftmodding.TutorialMod;
 import io.github.dwfischer9.minecraftmodding.client.renderer.BleepoRenderer;
 import io.github.dwfischer9.minecraftmodding.client.renderer.model.BleepoModel;
+import io.github.dwfischer9.minecraftmodding.core.init.BlockInit;
 import io.github.dwfischer9.minecraftmodding.core.init.EntityInit;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -15,6 +19,11 @@ public class ClientModEvents {
 	private ClientModEvents() {
 	}
 
+	
+	@SubscribeEvent
+	public static void clientSetup(FMLClientSetupEvent event) {
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.CUSTOM_BUSH.get(), RenderType.cutout());
+	}
 	@SubscribeEvent
 	public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
 		event.registerLayerDefinition(BleepoModel.LAYER_LOCATION, BleepoModel::createBodyLayer);
