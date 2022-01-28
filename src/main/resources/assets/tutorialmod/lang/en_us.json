@@ -3,5 +3,7 @@
 	"block.tutorialmod.example_block":"Example Block",
 	"block.tutorialmod.steel_beam":"Steel Beam",
 	"entity.tutorialmod.bleepo":"Bleepo",
-	"item.tutorialmod.bleepo_spawn_egg":"Bleepo Spawn Egg"
+	"item.tutorialmod.bleepo_spawn_egg":"Bleepo Spawn Egg",
+	"item.tutorialmod.custom_berries":"Custom Berries",
+	"block.tutorialmod.custom_bush":"Custom Bush"
 }
