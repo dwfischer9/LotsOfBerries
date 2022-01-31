@@ -8,7 +8,7 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = Main.MODID)
 public class WorldGen {
 	@SubscribeEvent
-    public static void onBiomeLoad(BiomeLoadingEvent event) {
-        BushGeneration.generateBushes(event);
-        }
+	public static void onBiomeLoad(BiomeLoadingEvent event) {
+		BushGeneration.generateBushes(event);
+	}
 }

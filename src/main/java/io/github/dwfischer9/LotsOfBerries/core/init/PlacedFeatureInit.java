@@ -7,4 +7,6 @@ public class PlacedFeatureInit {
 
 	public static final PlacedFeature CUSTOM_BUSH_PLACED = PlacementUtils.register("custom_bush_placed",
 			ConfigFeatureInit.BERRY_BUSH_CONFIG.placed());
+	public static final PlacedFeature SOULBERRY_BUSH_PLACED = PlacementUtils.register("soulberry_bush_placed",
+			ConfigFeatureInit.SOULBERRY_BUSH_CONFIG.placed());
 }
