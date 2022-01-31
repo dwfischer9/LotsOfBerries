@@ -4,11 +4,11 @@ loaderVersion="[39,)" #mandatory This is typically bumped every Minecraft versio
 license="GNU GPLv3"
 
 [[mods]] #mandatory
-modId="tutorialmod" #mandatory
+modId="lotsofberries" #mandatory
 version="1.0" #mandatory
-displayName="Tutorial Mod" #mandatory
+displayName="Lots of Berries" #mandatory
 logoFile="examplemod.png"#optional
-credits="Thanks to everyone who installed this mod! Please do me a favour and leave a rating if you like it." #optional
+credits="HI!" #optional
 authors="OhWhoah" #optional
 description='''
 A simple tutorial mod for minecraft 1.18
