@@ -1,0 +1,6 @@
+{
+	"parent": "minecraft:block/cross",
+	"textures":{
+		"cross": "lotsofberries:blocks/custom_bush/custom_bush_stage1"
+		}
+}

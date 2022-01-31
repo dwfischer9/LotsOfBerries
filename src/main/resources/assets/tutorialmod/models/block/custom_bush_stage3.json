@@ -1,6 +1,0 @@
-{
-	"parent": "minecraft:block/cross",
-	"textures":{
-		"cross": "tutorialmod:blocks/custom_bush_stage3"
-		}
-}
