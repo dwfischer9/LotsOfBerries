@@ -1,4 +1,6 @@
 {
 	"item.lotsofberries.custom_berries":"Custom Berries",
-	"block.lotsofberries.custom_bush":"Custom Bush"
+	"block.lotsofberries.custom_bush":"Custom Bush",
+	"block.lotsofberries.soulberry_bush":"Soulberry Bush",
+	"item.lotsofberries.soulberries":"Soulberries"
 }

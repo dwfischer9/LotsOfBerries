@@ -5,7 +5,6 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTab;
-
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraftforge.registries.DeferredRegister;
@@ -17,18 +16,24 @@ public final class ItemsInit {
 	private ItemsInit() {
 	} // constructor
 
-	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS,
-			Main.MODID);
+	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Main.MODID);
 //----------------------------------Items------------------------------------\\
 	// ----------------------------------Food----------------------------------------\\
 	public static final RegistryObject<Item> CUSTOM_BERRIES = ITEMS.register("custom_berries",
-			() -> new ItemNameBlockItem(BlockInit.CUSTOM_BUSH.get(),new Item.Properties().tab(CreativeModeTab.TAB_FOOD)
-					.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.2f).effect(()-> new MobEffectInstance(MobEffects.HEALTH_BOOST, 360,4), 1).build())));
-	// ----------------------------------Spawn Eggs------------------------------------\\
+			() -> new ItemNameBlockItem(BlockInit.CUSTOM_BUSH.get(),
+					new Item.Properties().tab(CreativeModeTab.TAB_FOOD)
+							.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.2f)
+									.effect(() -> new MobEffectInstance(MobEffects.HEALTH_BOOST, 360, 4), 1).build())));
 
+	public static final RegistryObject<Item> SOULBERRIES = ITEMS.register("soulberries",
+			() -> new ItemNameBlockItem(BlockInit.SOULBERRY_BUSH.get(),
+					new Item.Properties().tab(CreativeModeTab.TAB_FOOD)
+							.food(new FoodProperties.Builder().nutrition(3).saturationMod(0.2f)
+									.effect(() -> new MobEffectInstance(MobEffects.WITHER, 40, 4), 1).build())));
+	// ----------------------------------Spawn
+	// Eggs------------------------------------\\
 
 //----------------------------------Blocks----------------------------------\\
-
 
 //----------------------------------Tools------------------------------------\\
 

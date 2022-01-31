@@ -4,9 +4,11 @@ import java.util.Random;
 
 import io.github.dwfischer9.LotsOfBerries.core.init.ItemsInit;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
@@ -17,7 +19,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -61,6 +66,23 @@ public class CustomBush extends BushBlock {
 			net.minecraftforge.common.ForgeHooks.onCropsGrowPost(level, position, state);
 		}
 
+	}
+
+	public BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel,
+			BlockPos pCurrentPos, BlockPos pFacingPos) {
+		return !pState.canSurvive(pLevel, pCurrentPos) ? Blocks.AIR.defaultBlockState()
+				: super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
+	}
+
+	public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
+		BlockPos blockpos = pPos.below();
+		if (pState.getBlock() == this)
+			return pLevel.getBlockState(blockpos).canSustainPlant(pLevel, blockpos, Direction.UP, this);
+		return this.mayPlaceOn(pLevel.getBlockState(blockpos), pLevel, blockpos);
+	}
+
+	protected boolean mayPlaceOn(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
+		return pState.is(BlockTags.DIRT) || pState.is(Blocks.FARMLAND);
 	}
 
 	@SuppressWarnings("deprecation")

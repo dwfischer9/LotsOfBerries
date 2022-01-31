@@ -12,21 +12,19 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 
-
 public class BushGeneration {
-	
-	
-
-	public static void generateBushes(final BiomeLoadingEvent event){
+	public static void generateBushes(final BiomeLoadingEvent event) {
 		@SuppressWarnings("unused")
-		ResourceKey<Biome> key = ResourceKey.create(Registry.BIOME_REGISTRY, event.getName()); 
+		ResourceKey<Biome> key = ResourceKey.create(Registry.BIOME_REGISTRY, event.getName());
 		ResourceLocation biome = event.getName();
-		if(biome.toString().contains("plains")) {
-			List<Supplier<PlacedFeature>> base = event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
-			
-			base.add(()-> PlacedFeatureInit.CUSTOM_BUSH_PLACED);
-		}
+		List<Supplier<PlacedFeature>> base = event.getGeneration()
+				.getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
+		if (biome.toString().contains("plains"))
+			base.add(() -> PlacedFeatureInit.CUSTOM_BUSH_PLACED);
+
+		else if (biome.toString().contains("soul"))
+			base.add(() -> PlacedFeatureInit.SOULBERRY_BUSH_PLACED);
+
 	}
 
-	
 }
